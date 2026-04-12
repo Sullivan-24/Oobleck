@@ -1,0 +1,352 @@
+{
+  "cases": [
+    {
+      "alive_nodes": 4,
+      "failed_nodes": 4,
+      "plan": {
+        "iteration_time": 8181.818181818181,
+        "templates": [
+          {
+            "base_bottleneck_latency": 300.0,
+            "base_latency": 8181.818181818181,
+            "base_stage_slices": [
+              [
+                0,
+                20
+              ],
+              [
+                20,
+                40
+              ]
+            ],
+            "bottleneck_latency": 909.090909090909,
+            "bottleneck_stage_index": 1,
+            "iteration_time": 8181.818181818181,
+            "mem_required": 71497441280,
+            "modules_per_stage": [
+              [
+                "model.layers.0",
+                "model.layers.1",
+                "model.layers.2",
+                "model.layers.3",
+                "model.layers.4",
+                "model.layers.5",
+                "model.layers.6",
+                "model.layers.7",
+                "model.layers.8",
+                "model.layers.9",
+                "model.layers.10",
+                "model.layers.11",
+                "model.layers.12",
+                "model.layers.13",
+                "model.layers.14",
+                "model.layers.15",
+                "model.layers.16",
+                "model.layers.17",
+                "model.layers.18",
+                "model.layers.19"
+              ],
+              [
+                "model.layers.20",
+                "model.layers.21",
+                "model.layers.22",
+                "model.layers.23",
+                "model.layers.24",
+                "model.layers.25",
+                "model.layers.26",
+                "model.layers.27",
+                "model.layers.28",
+                "model.layers.29",
+                "model.layers.30",
+                "model.layers.31",
+                "model.layers.32",
+                "model.layers.33",
+                "model.layers.34",
+                "model.layers.35",
+                "model.layers.36",
+                "model.layers.37",
+                "model.layers.38",
+                "model.layers.39"
+              ]
+            ],
+            "node_indices": [
+              0,
+              1
+            ],
+            "node_performances": [
+              0.33,
+              0.33
+            ],
+            "num_instances": 1,
+            "num_microbatches_per_pipeline": 8,
+            "num_stages": 2,
+            "reference_latency_128mb": 117272.72727272726,
+            "stage_bindings": [
+              {
+                "base_latency": 300.0,
+                "effective_latency": 909.090909090909,
+                "node_index": 0,
+                "node_performance": 0.33,
+                "stage_index": 0
+              },
+              {
+                "base_latency": 300.0,
+                "effective_latency": 909.090909090909,
+                "node_index": 1,
+                "node_performance": 0.33,
+                "stage_index": 1
+              }
+            ],
+            "stage_slices": [
+              [
+                0,
+                20
+              ],
+              [
+                20,
+                40
+              ]
+            ],
+            "stages": [
+              {
+                "backward": 606.060606060606,
+                "forward": 303.030303030303,
+                "latency": 909.090909090909,
+                "layer_names": [
+                  "model.layers.0",
+                  "model.layers.1",
+                  "model.layers.2",
+                  "model.layers.3",
+                  "model.layers.4",
+                  "model.layers.5",
+                  "model.layers.6",
+                  "model.layers.7",
+                  "model.layers.8",
+                  "model.layers.9",
+                  "model.layers.10",
+                  "model.layers.11",
+                  "model.layers.12",
+                  "model.layers.13",
+                  "model.layers.14",
+                  "model.layers.15",
+                  "model.layers.16",
+                  "model.layers.17",
+                  "model.layers.18",
+                  "model.layers.19"
+                ],
+                "layers": [
+                  0,
+                  20
+                ],
+                "mem_required": 35748720640
+              },
+              {
+                "backward": 606.060606060606,
+                "forward": 303.030303030303,
+                "latency": 909.090909090909,
+                "layer_names": [
+                  "model.layers.20",
+                  "model.layers.21",
+                  "model.layers.22",
+                  "model.layers.23",
+                  "model.layers.24",
+                  "model.layers.25",
+                  "model.layers.26",
+                  "model.layers.27",
+                  "model.layers.28",
+                  "model.layers.29",
+                  "model.layers.30",
+                  "model.layers.31",
+                  "model.layers.32",
+                  "model.layers.33",
+                  "model.layers.34",
+                  "model.layers.35",
+                  "model.layers.36",
+                  "model.layers.37",
+                  "model.layers.38",
+                  "model.layers.39"
+                ],
+                "layers": [
+                  20,
+                  40
+                ],
+                "mem_required": 35748720640
+              }
+            ]
+          },
+          {
+            "base_bottleneck_latency": 300.0,
+            "base_latency": 8181.818181818181,
+            "base_stage_slices": [
+              [
+                0,
+                20
+              ],
+              [
+                20,
+                40
+              ]
+            ],
+            "bottleneck_latency": 909.090909090909,
+            "bottleneck_stage_index": 1,
+            "iteration_time": 8181.818181818181,
+            "mem_required": 71497441280,
+            "modules_per_stage": [
+              [
+                "model.layers.0",
+                "model.layers.1",
+                "model.layers.2",
+                "model.layers.3",
+                "model.layers.4",
+                "model.layers.5",
+                "model.layers.6",
+                "model.layers.7",
+                "model.layers.8",
+                "model.layers.9",
+                "model.layers.10",
+                "model.layers.11",
+                "model.layers.12",
+                "model.layers.13",
+                "model.layers.14",
+                "model.layers.15",
+                "model.layers.16",
+                "model.layers.17",
+                "model.layers.18",
+                "model.layers.19"
+              ],
+              [
+                "model.layers.20",
+                "model.layers.21",
+                "model.layers.22",
+                "model.layers.23",
+                "model.layers.24",
+                "model.layers.25",
+                "model.layers.26",
+                "model.layers.27",
+                "model.layers.28",
+                "model.layers.29",
+                "model.layers.30",
+                "model.layers.31",
+                "model.layers.32",
+                "model.layers.33",
+                "model.layers.34",
+                "model.layers.35",
+                "model.layers.36",
+                "model.layers.37",
+                "model.layers.38",
+                "model.layers.39"
+              ]
+            ],
+            "node_indices": [
+              2,
+              3
+            ],
+            "node_performances": [
+              0.33,
+              0.33
+            ],
+            "num_instances": 1,
+            "num_microbatches_per_pipeline": 8,
+            "num_stages": 2,
+            "reference_latency_128mb": 117272.72727272726,
+            "stage_bindings": [
+              {
+                "base_latency": 300.0,
+                "effective_latency": 909.090909090909,
+                "node_index": 2,
+                "node_performance": 0.33,
+                "stage_index": 0
+              },
+              {
+                "base_latency": 300.0,
+                "effective_latency": 909.090909090909,
+                "node_index": 3,
+                "node_performance": 0.33,
+                "stage_index": 1
+              }
+            ],
+            "stage_slices": [
+              [
+                0,
+                20
+              ],
+              [
+                20,
+                40
+              ]
+            ],
+            "stages": [
+              {
+                "backward": 606.060606060606,
+                "forward": 303.030303030303,
+                "latency": 909.090909090909,
+                "layer_names": [
+                  "model.layers.0",
+                  "model.layers.1",
+                  "model.layers.2",
+                  "model.layers.3",
+                  "model.layers.4",
+                  "model.layers.5",
+                  "model.layers.6",
+                  "model.layers.7",
+                  "model.layers.8",
+                  "model.layers.9",
+                  "model.layers.10",
+                  "model.layers.11",
+                  "model.layers.12",
+                  "model.layers.13",
+                  "model.layers.14",
+                  "model.layers.15",
+                  "model.layers.16",
+                  "model.layers.17",
+                  "model.layers.18",
+                  "model.layers.19"
+                ],
+                "layers": [
+                  0,
+                  20
+                ],
+                "mem_required": 35748720640
+              },
+              {
+                "backward": 606.060606060606,
+                "forward": 303.030303030303,
+                "latency": 909.090909090909,
+                "layer_names": [
+                  "model.layers.20",
+                  "model.layers.21",
+                  "model.layers.22",
+                  "model.layers.23",
+                  "model.layers.24",
+                  "model.layers.25",
+                  "model.layers.26",
+                  "model.layers.27",
+                  "model.layers.28",
+                  "model.layers.29",
+                  "model.layers.30",
+                  "model.layers.31",
+                  "model.layers.32",
+                  "model.layers.33",
+                  "model.layers.34",
+                  "model.layers.35",
+                  "model.layers.36",
+                  "model.layers.37",
+                  "model.layers.38",
+                  "model.layers.39"
+                ],
+                "layers": [
+                  20,
+                  40
+                ],
+                "mem_required": 35748720640
+              }
+            ]
+          }
+        ],
+        "throughput": 0.001955555555555556,
+        "total_num_microbatches": 16,
+        "total_num_nodes": 4
+      }
+    }
+  ]
+}

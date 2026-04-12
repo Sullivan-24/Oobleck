@@ -93,6 +93,13 @@ class ConfigurationEngine:
             host.status == HostStatus.killed for host in new_dist_info
         ), "Worker should not see any killed agent status."
 
+        if my_agent not in new_dist_info:
+            logger.info(
+                f"Worker {self.local_rank} in agent {self.agent_index} "
+                "was removed from the new distributed configuration. Exiting..."
+            )
+            os._exit(0)
+
         agent_index = new_dist_info.index(my_agent)
         if new_dist_info[agent_index].status == HostStatus.terminating:
             # This process will be terminated after the iteration.

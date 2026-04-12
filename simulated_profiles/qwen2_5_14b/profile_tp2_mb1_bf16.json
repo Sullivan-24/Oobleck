@@ -1,0 +1,344 @@
+{
+  "model_name": "transformers.models.qwen2.modeling_qwen2.Qwen2ForCausalLM",
+  "microbatch_size": 1,
+  "tp_size": 2,
+  "precision": "bf16",
+  "layers": [
+    {
+      "layer_index": 0,
+      "layer_name": "model.layers.0",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 1,
+      "layer_name": "model.layers.1",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 2,
+      "layer_name": "model.layers.2",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 3,
+      "layer_name": "model.layers.3",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 4,
+      "layer_name": "model.layers.4",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 5,
+      "layer_name": "model.layers.5",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 6,
+      "layer_name": "model.layers.6",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 7,
+      "layer_name": "model.layers.7",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 8,
+      "layer_name": "model.layers.8",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 9,
+      "layer_name": "model.layers.9",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 10,
+      "layer_name": "model.layers.10",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 11,
+      "layer_name": "model.layers.11",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 12,
+      "layer_name": "model.layers.12",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 13,
+      "layer_name": "model.layers.13",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 14,
+      "layer_name": "model.layers.14",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 15,
+      "layer_name": "model.layers.15",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 16,
+      "layer_name": "model.layers.16",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 17,
+      "layer_name": "model.layers.17",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 18,
+      "layer_name": "model.layers.18",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 19,
+      "layer_name": "model.layers.19",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 20,
+      "layer_name": "model.layers.20",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 21,
+      "layer_name": "model.layers.21",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 22,
+      "layer_name": "model.layers.22",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 23,
+      "layer_name": "model.layers.23",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 24,
+      "layer_name": "model.layers.24",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 25,
+      "layer_name": "model.layers.25",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 26,
+      "layer_name": "model.layers.26",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 27,
+      "layer_name": "model.layers.27",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 28,
+      "layer_name": "model.layers.28",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 29,
+      "layer_name": "model.layers.29",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 30,
+      "layer_name": "model.layers.30",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 31,
+      "layer_name": "model.layers.31",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 32,
+      "layer_name": "model.layers.32",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 33,
+      "layer_name": "model.layers.33",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 34,
+      "layer_name": "model.layers.34",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 35,
+      "layer_name": "model.layers.35",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 36,
+      "layer_name": "model.layers.36",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 37,
+      "layer_name": "model.layers.37",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 38,
+      "layer_name": "model.layers.38",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 39,
+      "layer_name": "model.layers.39",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 40,
+      "layer_name": "model.layers.40",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 41,
+      "layer_name": "model.layers.41",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 42,
+      "layer_name": "model.layers.42",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 43,
+      "layer_name": "model.layers.43",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 44,
+      "layer_name": "model.layers.44",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 45,
+      "layer_name": "model.layers.45",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 46,
+      "layer_name": "model.layers.46",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    },
+    {
+      "layer_index": 47,
+      "layer_name": "model.layers.47",
+      "forward": 5.0,
+      "backward": 10.0,
+      "mem_required": 1787436032
+    }
+  ]
+}

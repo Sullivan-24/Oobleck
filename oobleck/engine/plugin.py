@@ -128,9 +128,25 @@ class OobleckPlugin(HeterogeneousParallelPlugin):
                 if num_stages > 0
             ]
 
-            _, num_microbatches = pipeline_instantiator.distribute_batch(
+            distribution = pipeline_instantiator.distribute_batch(
                 dict(Counter(pipelines)), need_all_pipelines_have_batch=True
             )
+            if distribution is None:
+                logger.warning(
+                    "Preserving the previous pipeline shapes is infeasible after "
+                    "reconfiguration. Falling back to a fresh global plan."
+                )
+                num_instances, num_microbatches = pipeline_instantiator.instantiate(
+                    len(configuration_engine.dist_info)
+                )
+                pipelines = list(
+                    itertools.chain.from_iterable(
+                        itertools.repeat(template, num_templates)
+                        for template, num_templates in num_instances.items()
+                    )
+                )
+            else:
+                _, num_microbatches = distribution
         else:
             num_instances, num_microbatches = pipeline_instantiator.instantiate(
                 len(configuration_engine.dist_info)

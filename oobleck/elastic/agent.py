@@ -112,10 +112,23 @@ class Agent:
             f"Reconfiguration request received from master: {dist_info}. Sending to workers"
         )
         for worker in self.workers:
-            worker.pipe.send(
-                "immediate_reconfigure" if immediate_restart else "reconfigure"
+            try:
+                worker.pipe.send(
+                    "immediate_reconfigure" if immediate_restart else "reconfigure"
+                )
+                worker.pipe.send(dist_info)
+            except (BrokenPipeError, EOFError, OSError) as exc:
+                logger.warning(
+                    f"Failed to notify worker {worker.process.pid} about "
+                    f"reconfiguration: {exc}"
+                )
+
+        if self.agent_index >= len(dist_info):
+            logger.warning(
+                "This agent is no longer present in the reconfigured topology. "
+                "Skipping master port forwarding."
             )
-            worker.pipe.send(dist_info)
+            return
 
         # If this agent is about to die, don't forward the port
         if dist_info[self.agent_index].status == HostStatus.terminating:
@@ -203,7 +216,11 @@ class Agent:
         # If this is the first agent, it should forward the master rank port
         if self.agent_index == 0:
             logger.debug("Waiting for rank 0 port...")
-            port: int = self.workers[0].pipe.recv()
+            try:
+                port: int = self.workers[0].pipe.recv()
+            except (BrokenPipeError, EOFError, OSError) as exc:
+                logger.warning(f"Failed to receive rank 0 port from worker: {exc}")
+                return
             logger.debug(f"Received rank 0 port: {port}. Sending it to master.")
             self.stub.SetMasterRankPort(PortInfo(port=port))
 
@@ -213,11 +230,19 @@ class Agent:
             port = self.stub.GetMasterRankPort(Empty()).port
 
         for worker in self.workers:
-            worker.pipe.send(port)
+            try:
+                worker.pipe.send(port)
+            except (BrokenPipeError, EOFError, OSError) as exc:
+                logger.warning(
+                    f"Failed to forward master port to worker {worker.process.pid}: {exc}"
+                )
 
         # Master rank will send another message to the agent to reset the port
         if self.agent_index == 0:
-            self.workers[0].pipe.recv()
+            try:
+                self.workers[0].pipe.recv()
+            except (BrokenPipeError, EOFError, OSError) as exc:
+                logger.warning(f"Failed to receive port reset ack from worker: {exc}")
             self.stub.SetMasterRankPort(PortInfo(port=0))
 
     def watch_worker_exit(self):
