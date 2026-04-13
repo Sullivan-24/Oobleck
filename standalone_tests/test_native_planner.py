@@ -228,6 +228,65 @@ class NativePlannerTest(unittest.TestCase):
         if output_path.exists():
             output_path.unlink()
 
+    def test_cli_multiple_failed_nodes_writes_multiple_cases(self) -> None:
+        profile = {
+            "model_name": "test-model",
+            "microbatch_size": 1,
+            "tp_size": 1,
+            "precision": "bf16",
+            "layers": [
+                {
+                    "layer_index": layer.layer_index,
+                    "layer_name": layer.layer_name,
+                    "forward": layer.forward,
+                    "backward": layer.backward,
+                    "mem_required": layer.mem_required,
+                }
+                for layer in build_layers(6)
+            ],
+        }
+
+        profile_path = Path(__file__).resolve().parent / "_tmp_profile.json"
+        output_path = Path(__file__).resolve().parent / "_tmp_result.json"
+        try:
+            profile_path.write_text(json.dumps(profile))
+
+            stdout = io.StringIO()
+            with contextlib.redirect_stdout(stdout):
+                exit_code = main(
+                    [
+                        "--profile",
+                        str(profile_path),
+                        "--total-nodes",
+                        "4",
+                        "--global-num-microbatches",
+                        "4",
+                        "--failed-nodes",
+                        "0,1,2",
+                        "--output-json",
+                        str(output_path),
+                        "--json",
+                    ]
+                )
+        finally:
+            if profile_path.exists():
+                profile_path.unlink()
+
+        self.assertEqual(exit_code, 0)
+        payload = json.loads(output_path.read_text())
+        self.assertEqual(len(payload["cases"]), 3)
+        self.assertEqual(
+            [(case["failed_nodes"], case["alive_nodes"]) for case in payload["cases"]],
+            [(0, 4), (1, 3), (2, 2)],
+        )
+        output = stdout.getvalue()
+        self.assertIn("alive_nodes=4 failed_nodes=0 iteration_time=", output)
+        self.assertIn("alive_nodes=3 failed_nodes=1 iteration_time=", output)
+        self.assertIn("alive_nodes=2 failed_nodes=2 iteration_time=", output)
+
+        if output_path.exists():
+            output_path.unlink()
+
 
 if __name__ == "__main__":
     unittest.main()
